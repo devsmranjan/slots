@@ -1,4 +1,17 @@
-<app-calendar-card
-  *ngFor="let calendar of calendars$ | async"
-  [calendar]="calendar"
-/>
+<ng-container *ngIf="calendars$ | async as calendars; else placeholder">
+  <ng-container *ngIf="calendars.length > 0; else noData">
+    <app-calendar-card
+      *ngFor="let calendar of calendars; trackBy: trackById"
+      [calendar]="calendar"
+    />
+  </ng-container>
+
+  <ng-template #noData>
+    <p>No data availble.</p>
+  </ng-template>
+</ng-container>
+
+<ng-template #placeholder>
+  <p *ngIf="loading$ | async">Loading...</p>
+  <p *ngIf="error$ | async as error">{{ error }}</p>
+</ng-template>

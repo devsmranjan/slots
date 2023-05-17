@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarService } from '../../calendar.service';
 import { CalendarCardComponent } from '../../components';
+import { CalendarStore } from '../../calendar.store';
+import { CalendarInterface } from '../../models';
 
 @Component({
   selector: 'app-calendar-list',
@@ -11,8 +12,18 @@ import { CalendarCardComponent } from '../../components';
   styleUrls: ['./calendar-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CalendarListComponent {
-  calendars$ =  this.calendarService.getCalendars();
+export class CalendarListComponent implements OnInit {
+  calendars$ = this.calendarStore.calendars$;
+  error$ = this.calendarStore.error$;
+  loading$ = this.calendarStore.loading$;
 
-  constructor(private readonly calendarService: CalendarService) {}
+  constructor(private readonly calendarStore: CalendarStore) {}
+
+  ngOnInit(): void {
+    this.calendarStore.getCalendars();
+  }
+
+  trackById(index: number, calendar: CalendarInterface) {
+    return calendar.id;
+  }
 }

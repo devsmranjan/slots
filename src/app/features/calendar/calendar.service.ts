@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { delay, of } from 'rxjs';
 
 import { CalendarInterface } from './models';
 
@@ -17,6 +17,6 @@ export class CalendarService {
         id: 2,
         title: 'SDE 2',
       },
-    ]);
+    ]).pipe(delay(3000));
   }
 }

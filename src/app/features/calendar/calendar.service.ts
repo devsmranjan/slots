@@ -1,22 +1,15 @@
 import { Injectable } from '@angular/core';
 import { delay, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { CalendarInterface } from './models';
+import { SERVER_URL } from '../../shared/constants';
 
 @Injectable()
 export class CalendarService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getCalendars() {
-    return of<CalendarInterface[]>([
-      {
-        id: 1,
-        title: 'SDE 1',
-      },
-      {
-        id: 2,
-        title: 'SDE 2',
-      },
-    ]).pipe(delay(3000));
+    return this.http.get<CalendarInterface[]>(`${SERVER_URL}/calendars`);
   }
 }

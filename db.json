@@ -1,0 +1,46 @@
+{
+    "calendars": [
+        {
+            "id": 1,
+            "title": "SDE 1 interviews",
+            "url": "/sde-1-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        },
+        {
+            "id": 2,
+            "title": "SDE 2 interviews",
+            "url": "/sde-2-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        },
+        {
+            "id": 3,
+            "title": "SDE 3 interviews",
+            "url": "/sde-3-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        },
+        {
+            "id": 4,
+            "title": "SDE 4 interviews",
+            "url": "/sde-4-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        },
+        {
+            "id": 5,
+            "title": "SDE 5 interviews",
+            "url": "/sde-5-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        },
+        {
+            "id": 6,
+            "title": "SDE 6 interviews",
+            "url": "/sde-1-interviews",
+            "startDate": "02/05/2023",
+            "endDate": "12/05/2023"
+        }
+    ]
+}

@@ -8,6 +8,6 @@ export const appRoutes: Route[] = [
     },
     {
         path: 'calendars',
-        loadComponent:  () => import('./features/calendars/calendars.component').then(c => c.CalendarsComponent)
+        loadComponent:  () => import('./features/calendar/calendar.component').then(c => c.CalendarComponent)
     }
 ];

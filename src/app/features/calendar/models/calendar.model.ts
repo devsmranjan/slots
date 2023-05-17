@@ -1,4 +1,7 @@
 export interface CalendarInterface {
     id: number,
-    title: string
+    title: string,
+    url: string,
+    startDate: string,
+    endDate: string
 }

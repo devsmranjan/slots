@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
-import { delay, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { CalendarInterface } from './models';
 import { SERVER_URL } from '../../shared/constants';
+import { CalendarInterface } from './models';
 
 @Injectable()
 export class CalendarService {

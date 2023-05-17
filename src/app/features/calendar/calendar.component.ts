@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarListComponent } from './containers';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
 import { CalendarService } from './calendar.service';
 import { CalendarStore } from './calendar.store';
+import { CalendarListComponent } from './containers';
 
 @Component({
   selector: 'app-calendar',

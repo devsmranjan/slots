@@ -1,10 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { HttpErrorResponse } from '@angular/common/http';
 import { switchMap, tap } from 'rxjs';
 
-import { CalendarInterface } from './models';
 import { CalendarService } from './calendar.service';
+import { CalendarInterface } from './models';
 
 export interface CalendarState {
   calendars: CalendarInterface[] | null;

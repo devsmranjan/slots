@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarCardComponent } from '../../components';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
 import { CalendarStore } from '../../calendar.store';
+import { CalendarCardComponent } from '../../components';
 import { CalendarInterface } from '../../models';
 
 @Component({

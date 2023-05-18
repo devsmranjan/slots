@@ -1,6 +1,6 @@
 <div class="flex -space-x-5">
   <app-avatar
-    *ngFor="let avatar of getAvatars()"
+    *ngFor="let avatar of getAvatars(); trackBy: trackById"
     [imageUrl]="avatar.imageUrl"
     [imageAlt]="avatar.imageAlt"
   />

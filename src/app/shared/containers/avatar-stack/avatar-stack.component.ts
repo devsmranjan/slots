@@ -20,4 +20,8 @@ export class AvatarStackComponent {
   getAvatars() {
     return this.avatars.slice(0, Math.min(this.avatars.length, this.maxLength));
   }
+
+  trackById(index: number, avatar: AvatarInterface) {
+    return avatar.id
+  }
 }

@@ -1,4 +1,4 @@
-<div class="rounded-md shadow-sm bg-white">
+<div class="rounded-md shadow-sm bg-white cursor-pointer" (click)="onClickCard()">
   <div class="rounded-md p-4" [style.backgroundColor]="calendar.color + '0D'">
     <div class="flex justify-between items-start mb-3">
       <app-avatar-stack [avatars]="getAvatars()" [color]="calendar.color" />
@@ -18,7 +18,8 @@
       class="text-sm pt-1 font-medium font-body"
       [style.color]="calendar.color"
     >
-      22 Jan - 12 Feb
+      {{ calendar.startDate | date : 'dd MMM' }} -
+      {{ calendar.endDate | date : 'dd MMM' }}
     </p>
   </div>
 </div>

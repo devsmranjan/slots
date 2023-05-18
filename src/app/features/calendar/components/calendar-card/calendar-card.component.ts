@@ -1,5 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 import { AvatarStackComponent } from '../../../../shared/containers';
 import { getAvatarsByParticipants } from '../../../../shared/helpers';
@@ -12,11 +18,18 @@ import { CalendarInterface } from '../../models';
   templateUrl: './calendar-card.component.html',
   styleUrls: ['./calendar-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DatePipe],
 })
 export class CalendarCardComponent {
   @Input({ required: true }) calendar!: CalendarInterface;
 
+  @Output() clickCard = new EventEmitter<number>();
+
   getAvatars() {
     return getAvatarsByParticipants(this.calendar.participants);
+  }
+
+  onClickCard() {
+    this.clickCard.emit(this.calendar.id);
   }
 }

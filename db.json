@@ -6,7 +6,43 @@
             "url": "/sde-1-interviews",
             "startDate": "02/05/2023",
             "endDate": "12/05/2023",
-            "color": "#6C5CE7"
+            "color": "#6C5CE7",
+            "participants": [
+                {
+                    "user": {
+                        "id": 2,
+                        "firstName": "Smruti Ranjan 2",
+                        "lastName": "Rana",
+                        "avatarUrl": "http://placekitten.com/200/200"
+                    },
+                    "permission": "READ"
+                },
+                {
+                    "user": {
+                        "id": 3,
+                        "firstName": "Smruti Ranjan 3",
+                        "lastName": "Rana"
+                    },
+                    "permission": "READ"
+                },
+                {
+                    "user": {
+                        "id": 4,
+                        "firstName": "Smruti Ranjan 4",
+                        "lastName": "Rana"
+                    },
+                    "permission": "READ"
+                },
+                {
+                    "user": {
+                        "id": 5,
+                        "firstName": "Smruti Ranjan 5",
+                        "lastName": "Rana"
+                    },
+                    "permission": "READ"
+                }
+            ],
+            "ownerId": 1 
         },
         {
             "id": 2,
@@ -47,6 +83,32 @@
             "startDate": "02/05/2023",
             "endDate": "12/05/2023",
             "color": "#2ECC71"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Smruti Ranjan",
+            "lastName": "Rana",
+            "avatarUrl": "http://placekitten.com/200/200"
+        },
+        {
+            "id": 2,
+            "firstName": "Smruti Ranjan 2",
+            "lastName": "Rana",
+            "avatarUrl": "http://placekitten.com/200/200"
+        },
+        {
+            "id": 3,
+            "firstName": "Smruti Ranjan 3",
+            "lastName": "Rana",
+            "avatarUrl": "http://placekitten.com/200/200"
+        },
+        {
+            "id": 4,
+            "firstName": "Smruti Ranjan 4",
+            "lastName": "Rana",
+            "avatarUrl": "http://placekitten.com/200/200"
         }
     ]
 }

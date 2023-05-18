@@ -6,7 +6,7 @@
     "start": "nx serve --host=0.0.0.0 --disable-host-check",
     "build": "nx build",
     "test": "nx test",
-    "server": "npx json-server db.json --host=0.0.0.0 --disable-host-check"
+    "server": "npx json-server db.json --watch --host=0.0.0.0 --disable-host-check"
   },
   "private": true,
   "dependencies": {

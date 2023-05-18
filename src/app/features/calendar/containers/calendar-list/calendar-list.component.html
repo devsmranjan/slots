@@ -1,10 +1,13 @@
 <ng-container *ngIf="calendars$ | async as calendars; else placeholder">
-  <ng-container *ngIf="calendars.length > 0; else noData">
+  <div
+    *ngIf="calendars.length > 0; else noData"
+    class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+  >
     <app-calendar-card
       *ngFor="let calendar of calendars; trackBy: trackById"
       [calendar]="calendar"
     />
-  </ng-container>
+  </div>
 
   <ng-template #noData>
     <p>No data availble.</p>

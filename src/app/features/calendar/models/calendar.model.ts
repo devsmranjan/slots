@@ -3,5 +3,6 @@ export interface CalendarInterface {
     title: string,
     url: string,
     startDate: string,
-    endDate: string
+    endDate: string,
+    color: string
 }

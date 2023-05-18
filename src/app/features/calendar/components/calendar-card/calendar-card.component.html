@@ -1,5 +1,31 @@
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">{{ calendar.title }}</div>
+<div class="rounded-md shadow-sm bg-white">
+  <div class="rounded-md p-4" [style.backgroundColor]="calendar.color + '0D'">
+    <div class="flex justify-between items-start mb-3">
+      <div class="flex -space-x-5">
+        <app-avatar imageUrl="http://placekitten.com/200/200" imageAlt="Kitten"/>
+        <app-avatar imageUrl="http://placekitten.com/200/200" imageAlt="Kitten"/>
+        <app-avatar imageUrl="http://placekitten.com/200/200" imageAlt="Kitten"/>
+        <a
+          class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-dark border-2 border-white rounded-full hover:bg-gray-600"
+          href="#"
+          >+99</a
+        >
+      </div>
+      <span
+        class="material-symbols-outlined font-bold"
+        [style.color]="calendar.color"
+      >
+        more_horiz
+      </span>
+    </div>
+    <h2 class="text-lg font-bold font-heading text-dark">
+      {{ calendar.title }}
+    </h2>
+    <p
+      class="text-sm pt-1 font-medium font-body"
+      [style.color]="calendar.color"
+    >
+      22 Jan - 12 Feb
+    </p>
   </div>
 </div>

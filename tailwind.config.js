@@ -11,12 +11,13 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: ['Lato', 'sans-serif'],
+        button: ['Lato', 'sans-serif'],
         body: ['Roboto', 'sans-serif'],
       },
       colors: {
         dark: '#201F24',
-        primary: "#027DC3"
-      }
+        primary: '#027DC3',
+      },
     },
   },
   plugins: [],

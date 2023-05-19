@@ -4,7 +4,12 @@
 >
   <div class="rounded-md p-4" [style.backgroundColor]="calendar.color + '0D'">
     <div class="flex justify-between items-start mb-3">
-      <app-avatar-stack [avatars]="getAvatars()" [color]="calendar.color" />
+      <app-avatar-stack
+        [avatars]="getAvatars()"
+        [color]="calendar.color"
+        (clickAddNew)="onClickAddNewParticipants()"
+        (clickShowAll)="onClickShowAllParticipants()"
+      />
 
       <div>
         <button

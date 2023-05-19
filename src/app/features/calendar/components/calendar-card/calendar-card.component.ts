@@ -28,6 +28,8 @@ export class CalendarCardComponent {
 
   @Output() clickCard = new EventEmitter<void>();
   @Output() clickMenuItem = new EventEmitter<MenuItemInterface>();
+  @Output() clickAddNewParticipants = new EventEmitter<void>();
+  @Output() clickShowAllParticipants = new EventEmitter<void>();
 
   readonly menuItems: MenuItemInterface[] = [
     {
@@ -51,5 +53,13 @@ export class CalendarCardComponent {
 
   onClickMenuItem(item: MenuItemInterface) {
     this.clickMenuItem.emit(item);
+  }
+
+  onClickAddNewParticipants() {
+    this.clickAddNewParticipants.emit();
+  }
+
+  onClickShowAllParticipants() {
+    this.clickShowAllParticipants.emit();
   }
 }

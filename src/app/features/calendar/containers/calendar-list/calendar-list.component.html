@@ -8,6 +8,8 @@
       [calendar]="calendar"
       (clickCard)="onClickCalendarCard(calendar.id)"
       (clickMenuItem)="onClickCalendarMenuItem($event, calendar.id)"
+      (clickAddNewParticipants)="onClickAddNewParticipants(calendar.id)"
+      (clickShowAllParticipants)="onClickShowAllParticipants(calendar.id)"
     />
   </div>
 

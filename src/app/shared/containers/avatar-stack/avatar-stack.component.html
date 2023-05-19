@@ -4,17 +4,19 @@
     [imageUrl]="avatar.imageUrl"
     [imageAlt]="avatar.imageAlt"
   />
-  <a
+  <button
     *ngIf="avatars.length > maxLength"
     class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-dark border-2 border-white rounded-full hover:bg-gray-600"
-    href="#"
-    >+{{ avatars.length - maxLength }}
-  </a>
+    (click)="onClickShowAll($event)"
+  >
+    +{{ avatars.length - maxLength }}
+  </button>
 
   <button
     *ngIf="avatars.length <= 0"
     class="flex items-center justify-center w-10 h-10 font-medium bg-white border-2 border-white rounded-full"
     [class.text-dark]="!color"
+    (click)="onClickAddNew($event)"
   >
     <span
       class="material-symbols-outlined text-xl font-medium"

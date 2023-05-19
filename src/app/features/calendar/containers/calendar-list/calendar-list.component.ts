@@ -28,11 +28,23 @@ export class CalendarListComponent implements OnInit {
   }
 
   onClickCalendarCard(calendarId: number) {
+    console.log('Calendar card clicked');
     console.log({ calendarId });
   }
 
   onClickCalendarMenuItem(item: MenuItemInterface, calendarId: number) {
+    console.log('Menu item clicked');
     console.log({ item, calendarId });
+  }
+
+  onClickAddNewParticipants(calendarId: number) {
+    console.log('Add new particpants');
+    console.log({ calendarId });
+  }
+
+  onClickShowAllParticipants(calendarId: number) {
+    console.log('Show all participants');
+    console.log({ calendarId });
   }
 
   trackById(index: number, calendar: CalendarInterface) {

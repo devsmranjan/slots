@@ -6,6 +6,8 @@
     <app-calendar-card
       *ngFor="let calendar of calendars; trackBy: trackById"
       [calendar]="calendar"
+      (clickCard)="onClickCalendarCard(calendar.id)"
+      (clickMenuItem)="onClickCalendarMenuItem($event, calendar.id)"
     />
   </div>
 

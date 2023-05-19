@@ -1,15 +1,30 @@
-<div class="rounded-md shadow-sm bg-white cursor-pointer" (click)="onClickCard()">
+<div
+  class="rounded-md shadow-sm bg-white cursor-pointer"
+  (click)="onClickCard()"
+>
   <div class="rounded-md p-4" [style.backgroundColor]="calendar.color + '0D'">
     <div class="flex justify-between items-start mb-3">
       <app-avatar-stack [avatars]="getAvatars()" [color]="calendar.color" />
-      <button>
-        <span
-          class="material-symbols-outlined font-bold"
-          [style.color]="calendar.color"
+
+      <div>
+        <button
+          [cdkMenuTriggerFor]="menuComponent.menu"
+          (click)="onToggleMenu($event)"
         >
-          more_horiz
-        </span>
-      </button>
+          <span
+            class="material-symbols-outlined font-bold"
+            [style.color]="calendar.color"
+          >
+            more_horiz
+          </span>
+        </button>
+
+        <app-menu
+          #menuComponent
+          [items]="menuItems"
+          (clickItem)="onClickMenuItem($event)"
+        ></app-menu>
+      </div>
     </div>
     <h2 class="text-lg font-bold font-heading text-dark">
       {{ calendar.title }}

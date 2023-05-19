@@ -1,0 +1,53 @@
+<ng-template #menu>
+  <div cdkMenu class="bg-white shadow-sm rounded">
+    <ng-container *ngFor="let item of items">
+      <ng-container *ngIf="hasChildren(item); else leafNode">
+        <button
+          cdkMenuItem
+          [cdkMenuTriggerFor]="subMenu"
+          *ngIf="menuComponent.menu as subMenu"
+          class="bg-white p-2 hover:bg-gray-50 text-sm flex gap-2 justify-between items-center"
+        >
+          <div class="flex gap-2 items-center">
+            <span
+              *ngIf="item.icon"
+              class="material-symbols-outlined text-lg font-medium"
+            >
+              {{ item.icon }}
+            </span>
+            <span class="text-sm">{{ item.label }}</span>
+          </div>
+
+          <span
+            *ngIf="item.children"
+            class="material-symbols-outlined text-lg font-medium"
+          >
+            arrow_right
+          </span>
+        </button>
+
+        <app-menu #menuComponent [items]="item.children!"></app-menu>
+      </ng-container>
+
+      <ng-template #leafNode>
+        <button
+          cdkMenuItem
+          class="bg-white hover:bg-gray-50 text-sm flex gap-2 justify-between items-center w-full"
+          [class.p-2]="item.icon"
+          [class.p-3]="!item.icon"
+          (click)="onClickItem(item)"
+        >
+          <div class="flex gap-2 items-center">
+            <span
+              *ngIf="item.icon"
+              class="material-symbols-outlined text-lg font-medium"
+            >
+              {{ item.icon }}
+            </span>
+            <span class="text-sm">{{ item.label }}</span>
+          </div>
+        </button>
+      </ng-template>
+    </ng-container>
+  </div>
+</ng-template>

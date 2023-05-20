@@ -1,5 +1,7 @@
 <img
   class="w-10 h-10 border-2 border-white rounded-full"
+  [style.width]="size ? size + 'rem' : null"
+  [style.height]="size ? size + 'rem' : null"
   [src]="imageUrl"
   [alt]="imageAlt"
   [title]="imageAlt"

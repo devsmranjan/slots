@@ -12,4 +12,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AvatarComponent {
   @Input({ required: true }) imageUrl!: string;
   @Input({ required: true }) imageAlt!: string;
+
+  @Input() size!: number // in rem
 }

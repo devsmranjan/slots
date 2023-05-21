@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 
-import { AvatarComponent } from '../../components';
+import { AvatarComponent } from '..';
 import { AvatarInterface } from '../../models';
 
 @Component({

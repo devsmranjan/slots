@@ -8,8 +8,7 @@ import {
 } from '@angular/core';
 
 import { CdkMenuModule } from '@angular/cdk/menu';
-import { MenuComponent } from '../../../../shared/components/menu/menu.component';
-import { AvatarStackComponent } from '../../../../shared/containers';
+import { AvatarStackComponent, MenuComponent } from '../../../../shared/components';
 import { getAvatarsByParticipants } from '../../../../shared/helpers';
 import { MenuItemInterface } from '../../../../shared/models';
 import { CalendarInterface } from '../../models';

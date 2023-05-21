@@ -11,32 +11,15 @@
           [size]="3"
         />
       </li>
-      <li class="flex justify-center">
+      <li *ngFor="let item of sidebarItems" class="flex justify-center">
         <a
-          [routerLink]="['/calendars']"
-          [routerLinkActive]="
-            'bg-primary/[.1] hover:bg-primary/[.18] text-primary'
-          "
-          class="flex justify-center items-center gap-1 h-9 w-9 rounded-md"
+          [routerLink]="[item.path]"
+          [routerLinkActive]="'active'"
+          [title]="item.title"
+          class="flex justify-center items-center gap-1 h-9 w-9 rounded-md bg-white hover:bg-gray-100 text-gray-600"
         >
           <span class="material-symbols-outlined text-xl font-medium">
-            home
-          </span>
-        </a>
-      </li>
-      <li class="flex justify-center">
-        <a class="flex justify-center items-center h-9 w-9 bg-white hover:bg-gray-100 text-gray-600 rounded-md">
-          <span class="material-symbols-outlined text-xl font-medium">
-            calendar_month
-          </span>
-        </a>
-      </li>
-      <li class="flex justify-center">
-        <a
-          class="flex justify-center items-center h-9 w-9 bg-white hover:bg-gray-100 text-gray-600 rounded-md"
-        >
-          <span class="material-symbols-outlined text-xl font-medium">
-            groups
+            {{ item.icon }}
           </span>
         </a>
       </li>

@@ -7,8 +7,8 @@ import {
   Output,
 } from '@angular/core';
 
-import { AvatarComponent } from '..';
 import { AvatarInterface } from '../../models';
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'app-avatar-stack',

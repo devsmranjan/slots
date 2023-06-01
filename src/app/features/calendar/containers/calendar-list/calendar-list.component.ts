@@ -1,12 +1,17 @@
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
 import { MenuItemInterface } from '../../../../shared/models';
-import { CalendarStore } from '../../calendar.store';
 import { CalendarCardComponent } from '../../components';
 import { CalendarInterface } from '../../models';
+import { CalendarListStore } from './calendar-list.store';
 
 @Component({
   selector: 'app-calendar-list',
@@ -14,17 +19,20 @@ import { CalendarInterface } from '../../models';
   imports: [CommonModule, CalendarCardComponent, CdkMenuModule, MenuComponent],
   templateUrl: './calendar-list.component.html',
   styleUrls: ['./calendar-list.component.scss'],
+  providers: [CalendarListStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarListComponent implements OnInit {
-  calendars$ = this.calendarStore.calendars$;
-  error$ = this.calendarStore.error$;
-  loading$ = this.calendarStore.loading$;
+  // injects
+  #calendarListStore = inject(CalendarListStore);
 
-  constructor(private readonly calendarStore: CalendarStore) {}
+  // selectors
+  calendars$ = this.#calendarListStore.calendars$;
+  error$ = this.#calendarListStore.error$;
+  loading$ = this.#calendarListStore.loading$;
 
   ngOnInit(): void {
-    this.calendarStore.getCalendars();
+    this.#calendarListStore.getCalendars();
   }
 
   onClickCalendarCard(calendarId: number) {

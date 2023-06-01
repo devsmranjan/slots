@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { CalendarService } from './calendar.service';
 import { CalendarListComponent } from './containers';
 
 @Component({
@@ -10,7 +9,7 @@ import { CalendarListComponent } from './containers';
   imports: [CommonModule, CalendarListComponent],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  providers: [CalendarService],
+  providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent {}

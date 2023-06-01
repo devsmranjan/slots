@@ -8,35 +8,9 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'calendars',
-    children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import('./features/calendar/calendar.component').then(
-            (c) => c.CalendarComponent
-          ),
-      },
-      {
-        path: ':id',
-        loadComponent: () =>
-          import(
-            './features/calendar/containers/calendar-view/calendar-view.component'
-          ).then((c) => c.CalendarViewComponent),
-      },
-      {
-        path: ':id/edit',
-        loadComponent: () =>
-          import(
-            './features/calendar/containers/calendar-edit/calendar-edit.component'
-          ).then((c) => c.CalendarEditComponent),
-      },
-      {
-        path: 'create',
-        loadComponent: () =>
-          import(
-            './features/calendar/containers/calendar-create/calendar-create.component'
-          ).then((c) => c.CalendarCreateComponent),
-      },
-    ],
+    loadChildren: () =>
+      import('./features/calendar/calendar.routes').then(
+        (r) => r.CALENDER_ROUTES
+      ),
   },
 ];

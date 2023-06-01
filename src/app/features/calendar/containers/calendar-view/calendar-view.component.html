@@ -1,1 +1,15 @@
-<p>calendar-view works!</p>
+<ng-container *ngIf="calendarViewVm$ | async as calendarViewVm">
+  <div
+    *ngIf="calendarViewVm.calendar as calendar; else placeholder"
+    class="calendar"
+  >
+    <p>{{ calendar.title }}</p>
+    <p>{{ calendar.startDate }}</p>
+    <p>{{ calendar.endDate }}</p>
+  </div>
+
+  <ng-template #placeholder>
+    <p *ngIf="calendarViewVm.loading">Loading...</p>
+    <p *ngIf="calendarViewVm.error as error">{{ error }}</p>
+  </ng-template>
+</ng-container>

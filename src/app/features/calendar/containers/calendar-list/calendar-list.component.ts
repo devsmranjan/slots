@@ -9,6 +9,7 @@ import {
 
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
 import { MenuItemInterface } from '../../../../shared/models';
+import { CalendarService } from '../../calendar.service';
 import {
   CalendarCardComponent,
   CalendarListHeaderComponent,
@@ -28,7 +29,7 @@ import { CalendarListStore } from './calendar-list.store';
   ],
   templateUrl: './calendar-list.component.html',
   styleUrls: ['./calendar-list.component.scss'],
-  providers: [CalendarListStore],
+  providers: [CalendarListStore, CalendarService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarListComponent implements OnInit {

@@ -22,4 +22,8 @@ export class CalendarService {
       `${SERVER_URL}/calendars?${params.toString()}`
     );
   }
+
+  getCalendarById(id: string | number) {
+    return this.http.get<CalendarInterface>(`${SERVER_URL}/calendars/${id}`);
+  }
 }

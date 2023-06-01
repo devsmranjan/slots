@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { switchMap, tap } from 'rxjs';
 
@@ -20,19 +20,55 @@ const initialState: CalendarListState = {
 
 @Injectable()
 export class CalendarListStore extends ComponentStore<CalendarListState> {
-  readonly calendars$ = this.select((state) => state.calendars);
-  readonly error$ = this.select((state) => state.error);
-  readonly loading$ = this.select((state) => state.loading);
-
-  constructor(private calendarService: CalendarService) {
+  constructor() {
     super(initialState);
   }
 
-  readonly getCalendars = this.effect((trigger$) => {
+  /* --------------------------------- Injects -------------------------------- */
+
+  #calendarService = inject(CalendarService);
+
+  /* -------------------------------- Selectors ------------------------------- */
+
+  readonly #calendars$ = this.select((state) => state.calendars);
+  readonly #error$ = this.select((state) => state.error);
+  readonly #loading$ = this.select((state) => state.loading);
+
+  readonly vm$ = this.select(
+    this.#calendars$,
+    this.#error$,
+    this.#loading$,
+    (calendars, error, loading) => ({
+      calendars,
+      error,
+      loading,
+    })
+  );
+
+  /* --------------------------------- Updaters -------------------------------- */
+
+  setCalendars = this.updater((state, calendars: CalendarInterface[]) => ({
+    ...state,
+    calendars,
+  }));
+
+  setLoading = this.updater((state, loading: boolean) => ({
+    ...state,
+    loading,
+  }));
+
+  setError = this.updater((state, error: string) => ({
+    ...state,
+    error,
+  }));
+
+  /* --------------------------------- Effects -------------------------------- */
+
+  readonly #getCalendars = this.effect((trigger$) => {
     return trigger$.pipe(
       tap(() => this.patchState({ loading: true })),
       switchMap(() => {
-        return this.calendarService.getCalendars().pipe(
+        return this.#calendarService.getCalendars().pipe(
           tapResponse({
             next: (calendars) => {
               this.patchState({ calendars });
@@ -48,4 +84,14 @@ export class CalendarListStore extends ComponentStore<CalendarListState> {
       })
     );
   });
+
+  /* --------------------------------- Methods -------------------------------- */
+
+  loadCalendars() {
+    this.#getCalendars();
+  }
+
+  reloadCalendars() {
+    this.loadCalendars();
+  }
 }

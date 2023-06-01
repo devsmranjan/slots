@@ -10,7 +10,7 @@ import { CalendarListComponent } from './containers';
   imports: [CommonModule, CalendarListComponent],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CalendarService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent {}

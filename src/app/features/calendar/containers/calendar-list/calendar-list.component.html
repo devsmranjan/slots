@@ -1,24 +1,26 @@
-<ng-container *ngIf="calendars$ | async as calendars; else placeholder">
-  <div
-    *ngIf="calendars.length > 0; else noData"
-    class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-  >
-    <app-calendar-card
-      *ngFor="let calendar of calendars; trackBy: trackById"
-      [calendar]="calendar"
-      (clickCard)="onClickCalendarCard(calendar.id)"
-      (clickMenuItem)="onClickCalendarMenuItem($event, calendar.id)"
-      (clickAddNewParticipants)="onClickAddNewParticipants(calendar.id)"
-      (clickShowAllParticipants)="onClickShowAllParticipants(calendar.id)"
-    />
-  </div>
+<ng-container *ngIf="calendarListVm$ | async as calendarListVm">
+  <ng-container *ngIf="calendarListVm.calendars as calendars; else placeholder">
+    <div
+      *ngIf="calendars.length > 0; else noData"
+      class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
+      <app-calendar-card
+        *ngFor="let calendar of calendars; trackBy: trackById"
+        [calendar]="calendar"
+        (clickCard)="onClickCalendarCard(calendar.id)"
+        (clickMenuItem)="onClickCalendarMenuItem($event, calendar.id)"
+        (clickAddNewParticipants)="onClickAddNewParticipants(calendar.id)"
+        (clickShowAllParticipants)="onClickShowAllParticipants(calendar.id)"
+      />
+    </div>
 
-  <ng-template #noData>
-    <p>No data availble.</p>
+    <ng-template #noData>
+      <p>No data available.</p>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #placeholder>
+    <p *ngIf="calendarListVm.loading">Loading...</p>
+    <p *ngIf="calendarListVm.error as error">{{ error }}</p>
   </ng-template>
 </ng-container>
-
-<ng-template #placeholder>
-  <p *ngIf="loading$ | async">Loading...</p>
-  <p *ngIf="error$ | async as error">{{ error }}</p>
-</ng-template>

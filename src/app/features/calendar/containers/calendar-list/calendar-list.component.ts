@@ -23,16 +23,20 @@ import { CalendarListStore } from './calendar-list.store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarListComponent implements OnInit {
-  // injects
+  /* --------------------------------- Injects -------------------------------- */
+
   #calendarListStore = inject(CalendarListStore);
 
-  // selectors
-  calendars$ = this.#calendarListStore.calendars$;
-  error$ = this.#calendarListStore.error$;
-  loading$ = this.#calendarListStore.loading$;
+  /* --------------------------------- Selectors -------------------------------- */
+
+  calendarListVm$ = this.#calendarListStore.vm$;
 
   ngOnInit(): void {
-    this.#calendarListStore.getCalendars();
+    this.#calendarListStore.loadCalendars();
+  }
+
+  trackById(index: number, calendar: CalendarInterface) {
+    return calendar.id;
   }
 
   onClickCalendarCard(calendarId: number) {
@@ -46,16 +50,12 @@ export class CalendarListComponent implements OnInit {
   }
 
   onClickAddNewParticipants(calendarId: number) {
-    console.log('Add new particpants');
+    console.log('Add new participants');
     console.log({ calendarId });
   }
 
   onClickShowAllParticipants(calendarId: number) {
     console.log('Show all participants');
     console.log({ calendarId });
-  }
-
-  trackById(index: number, calendar: CalendarInterface) {
-    return calendar.id;
   }
 }

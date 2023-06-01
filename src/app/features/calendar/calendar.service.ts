@@ -8,7 +8,18 @@ import { CalendarInterface } from './models';
 export class CalendarService {
   constructor(private http: HttpClient) {}
 
-  getCalendars() {
-    return this.http.get<CalendarInterface[]>(`${SERVER_URL}/calendars`);
+  getCalendars(page: number, limit: number, query: string | null) {
+    const params = new URLSearchParams({
+      _page: page.toString(),
+      _limit: limit.toString(),
+    });
+
+    if (query) {
+      params.append('q', query);
+    }
+
+    return this.http.get<CalendarInterface[]>(
+      `${SERVER_URL}/calendars?${params.toString()}`
+    );
   }
 }

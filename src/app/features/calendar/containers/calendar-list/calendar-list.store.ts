@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
+import { debounce } from 'lodash-es';
 import { Observable, switchMap, tap } from 'rxjs';
 
 import { CalendarService } from '../../calendar.service';
@@ -131,4 +132,12 @@ export class CalendarListStore extends ComponentStore<CalendarListState> {
   reloadCalendars() {
     this.loadCalendars();
   }
+
+  #searchCalendars(query: string) {
+    this.setQuery(query);
+    this.setPage(0);
+    this.loadCalendars();
+  }
+
+  searchCalendars = debounce(this.#searchCalendars, 500);
 }

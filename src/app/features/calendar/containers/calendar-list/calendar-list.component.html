@@ -1,4 +1,9 @@
 <ng-container *ngIf="calendarListVm$ | async as calendarListVm">
+  <app-calendar-list-header
+    headerTitle="My Calendars"
+    (changeQuery)="onChangeQuery($event)"
+  />
+
   <ng-container *ngIf="calendarListVm.calendars as calendars; else placeholder">
     <div
       *ngIf="calendars.length > 0; else noData"

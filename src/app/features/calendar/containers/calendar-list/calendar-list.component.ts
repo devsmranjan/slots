@@ -9,14 +9,23 @@ import {
 
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
 import { MenuItemInterface } from '../../../../shared/models';
-import { CalendarCardComponent } from '../../components';
+import {
+  CalendarCardComponent,
+  CalendarListHeaderComponent,
+} from '../../components';
 import { CalendarInterface } from '../../models';
 import { CalendarListStore } from './calendar-list.store';
 
 @Component({
   selector: 'app-calendar-list',
   standalone: true,
-  imports: [CommonModule, CalendarCardComponent, CdkMenuModule, MenuComponent],
+  imports: [
+    CommonModule,
+    CalendarCardComponent,
+    CdkMenuModule,
+    MenuComponent,
+    CalendarListHeaderComponent,
+  ],
   templateUrl: './calendar-list.component.html',
   styleUrls: ['./calendar-list.component.scss'],
   providers: [CalendarListStore],
@@ -57,5 +66,9 @@ export class CalendarListComponent implements OnInit {
   onClickShowAllParticipants(calendarId: number) {
     console.log('Show all participants');
     console.log({ calendarId });
+  }
+
+  onChangeQuery(query: string) {
+    this.#calendarListStore.searchCalendars(query);
   }
 }

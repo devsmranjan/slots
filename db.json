@@ -1,114 +1,227 @@
 {
-    "calendars": [
+  "calendars": [
+    {
+      "id": 1,
+      "title": "SDE 1 interviews",
+      "url": "/sde-1-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#6C5CE7",
+      "participants": [
         {
-            "id": 1,
-            "title": "SDE 1 interviews",
-            "url": "/sde-1-interviews",
-            "startDate": "2023-05-02",
-            "endDate": "2023-05-12",
-            "color": "#6C5CE7",
-            "participants": [
-                {
-                    "user": {
-                        "id": 2,
-                        "firstName": "Smruti Ranjan 2",
-                        "lastName": "Rana",
-                        "avatarUrl": "http://placekitten.com/200/200"
-                    },
-                    "permission": "READ"
-                },
-                {
-                    "user": {
-                        "id": 3,
-                        "firstName": "Smruti Ranjan 3",
-                        "lastName": "Rana"
-                    },
-                    "permission": "READ"
-                },
-                {
-                    "user": {
-                        "id": 4,
-                        "firstName": "Smruti Ranjan 4",
-                        "lastName": "Rana"
-                    },
-                    "permission": "READ"
-                },
-                {
-                    "user": {
-                        "id": 5,
-                        "firstName": "Smruti Ranjan 5",
-                        "lastName": "Rana"
-                    },
-                    "permission": "READ"
-                }
-            ],
-            "ownerId": 1 
-        },
-        {
-            "id": 2,
-            "title": "SDE 2 interviews",
-            "url": "/sde-2-interviews",
-            "startDate": "2023-03-12",
-            "endDate": "2023-05-24",
-            "color": "#8E44AD"
-        },
-        {
-            "id": 3,
-            "title": "SDE 3 interviews",
-            "url": "/sde-3-interviews",
-            "startDate": "2023-05-02",
-            "endDate": "2023-05-12",
-            "color": "#F39C12"
-        },
-        {
-            "id": 4,
-            "title": "SDE 4 interviews",
-            "url": "/sde-4-interviews",
-            "startDate": "2023-05-02",
-            "endDate": "2023-05-12",
-            "color": "#636E72"
-        },
-        {
-            "id": 5,
-            "title": "SDE 5 interviews",
-            "url": "/sde-5-interviews",
-            "startDate": "2023-05-02",
-            "endDate": "2023-05-12",
-            "color": "#D63031"
-        },
-        {
-            "id": 6,
-            "title": "SDE 6 interviews",
-            "url": "/sde-1-interviews",
-            "startDate": "2023-05-02",
-            "endDate": "2023-05-12",
-            "color": "#2ECC71"
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "firstName": "Smruti Ranjan",
-            "lastName": "Rana",
-            "avatarUrl": "http://placekitten.com/200/200"
-        },
-        {
+          "user": {
             "id": 2,
             "firstName": "Smruti Ranjan 2",
             "lastName": "Rana",
             "avatarUrl": "http://placekitten.com/200/200"
+          },
+          "permission": "READ"
         },
         {
+          "user": {
             "id": 3,
             "firstName": "Smruti Ranjan 3",
-            "lastName": "Rana",
-            "avatarUrl": "http://placekitten.com/200/200"
+            "lastName": "Rana"
+          },
+          "permission": "READ"
         },
         {
+          "user": {
             "id": 4,
             "firstName": "Smruti Ranjan 4",
-            "lastName": "Rana",
-            "avatarUrl": "http://placekitten.com/200/200"
+            "lastName": "Rana"
+          },
+          "permission": "READ"
+        },
+        {
+          "user": {
+            "id": 5,
+            "firstName": "Smruti Ranjan 5",
+            "lastName": "Rana"
+          },
+          "permission": "READ"
         }
-    ]
+      ],
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "title": "SDE 2 interviews",
+      "url": "/sde-2-interviews",
+      "startDate": "2023-03-12",
+      "endDate": "2023-05-24",
+      "color": "#8E44AD"
+    },
+    {
+      "id": 3,
+      "title": "SDE 3 interviews",
+      "url": "/sde-3-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#F39C12"
+    },
+    {
+      "id": 4,
+      "title": "SDE 4 interviews",
+      "url": "/sde-4-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#636E72"
+    },
+    {
+      "id": 5,
+      "title": "SDE 5 interviews",
+      "url": "/sde-5-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#D63031"
+    },
+    {
+      "id": 6,
+      "title": "SDE 6 interviews",
+      "url": "/sde-1-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#2ECC71"
+    },
+    {
+      "id": 7,
+      "title": "SDE 7 interviews",
+      "url": "/sde-7-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#6C5CE7"
+    },
+    {
+      "id": 8,
+      "title": "SDE 8 interviews",
+      "url": "/sde-8-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#8E44AD"
+    },
+    {
+      "id": 9,
+      "title": "SDE 9 interviews",
+      "url": "/sde-9-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#F39C12"
+    },
+
+    {
+      "id": 10,
+      "title": "SDE 10 interviews",
+      "url": "/sde-10-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#636E72"
+    },
+    {
+      "id": 11,
+      "title": "SDE 11 interviews",
+      "url": "/sde-11-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#D63031"
+    },
+    {
+      "id": 12,
+      "title": "SDE 12 interviews",
+      "url": "/sde-12-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#2ECC71"
+    },
+    {
+      "id": 13,
+      "title": "SDE 13 interviews",
+      "url": "/sde-13-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#6C5CE7"
+    },
+    {
+      "id": 14,
+      "title": "SDE 14 interviews",
+      "url": "/sde-14-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#8E44AD"
+    },
+    {
+      "id": 15,
+      "title": "SDE 15 interviews",
+      "url": "/sde-15-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#F39C12"
+    },
+    {
+      "id": 16,
+      "title": "SDE 16 interviews",
+      "url": "/sde-16-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#636E72"
+    },
+    {
+      "id": 17,
+      "title": "SDE 17 interviews",
+      "url": "/sde-17-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#D63031"
+    },
+    {
+      "id": 18,
+      "title": "SDE 18 interviews",
+      "url": "/sde-18-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#2ECC71"
+    },
+    {
+      "id": 19,
+      "title": "SDE 19 interviews",
+      "url": "/sde-19-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#6C5CE7"
+    },
+    {
+      "id": 20,
+      "title": "SDE 20 interviews",
+      "url": "/sde-20-interviews",
+      "startDate": "2023-05-02",
+      "endDate": "2023-05-12",
+      "color": "#8E44AD"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Smruti Ranjan",
+      "lastName": "Rana",
+      "avatarUrl": "http://placekitten.com/200/200"
+    },
+    {
+      "id": 2,
+      "firstName": "Smruti Ranjan 2",
+      "lastName": "Rana",
+      "avatarUrl": "http://placekitten.com/200/200"
+    },
+    {
+      "id": 3,
+      "firstName": "Smruti Ranjan 3",
+      "lastName": "Rana",
+      "avatarUrl": "http://placekitten.com/200/200"
+    },
+    {
+      "id": 4,
+      "firstName": "Smruti Ranjan 4",
+      "lastName": "Rana",
+      "avatarUrl": "http://placekitten.com/200/200"
+    }
+  ]
 }
